@@ -1,0 +1,98 @@
+
+\documentclass[fleqn,head_space=14mm,foot_space=15mm,gutter=10mm,fore_edge=10mm,
+    twocolumn,jafontscale=0.92]{jlreq}
+
+\setlength{\columnseprule}{0.4pt}
+\setlength{\mathindent}{2\zw}
+
+\setlength{\lineskip}{3pt}
+\setlength{\lineskiplimit}{3pt}
+
+\setlength{\fboxsep}{5pt}
+\setlength{\fboxrule}{1.0pt}
+
+\setlength{\intextsep}{7pt}
+\setlength{\floatsep}{0pt}
+\setlength{\textfloatsep}{0pt}
+\setlength{\abovecaptionskip}{0pt}
+
+%セクション見出し設定
+\ModifyHeading{section}{lines=2,label_format={\S},
+    format={%
+        \begin{tikzpicture}
+        \useasboundingbox (0,0) rectangle (0,0);
+        \fill[black!50] (0,-4pt) rectangle (8pt,14pt);
+        \draw[black!50,line width=1pt] (0,-4pt) -- (\linewidth,-4pt);
+        \end{tikzpicture}%
+    \hspace{1\zw}#1#2}}
+
+\ModifyHeading{subsection}{font=\sffamily\large,
+    label_format={\framebox[21pt][c]{\rmfamily\bfseries{{\Large{\arabic{subsection}}}}}}}
+
+\title{㋯【大学入試 数学】 標準演習〈解答編〉 ver.01}
+\author{}
+\date{}
+
+%ヘッダー・フッター設定
+\usepackage{titleps}
+    \newpagestyle{main}{
+    \sethead[\textsf{㋯【大学入試 数学】 標準演習〈解答編〉 ver.01}][][\textsf{\S \, \sectiontitle}]
+            {\textsf{㋯【大学入試 数学】 標準演習〈解答編〉 ver.01}}{}
+            {\textsf{\S \, \sectiontitle}}
+    \setfoot[][][]
+            {}{\thepage}{}
+    }
+    
+    \pagestyle{main}
+
+\usepackage[deluxe,match,jfm_yoko=jlreq,jfm_tate=jlreqv]{luatexja-preset}
+\usepackage{luatexja-otf}
+
+\usepackage{enumitem}
+\def\threedigits#1{
+    \ifnum#1<100 0\fi 
+    \ifnum#1<10 0\fi 
+    \number#1}
+
+\usepackage{tikz}
+\usetikzlibrary{patterns,angles,quotes,arrows.meta,calc}
+
+\usepackage{circuitikz}
+
+\usepackage{lua-ul}
+
+\usepackage{amsmath,amssymb}
+\usepackage{unicode-math}
+\usepackage{autobreak}
+
+\usepackage[italicdiff]{physics}
+
+\usepackage{ulem}
+\usepackage{fancybox}
+
+\usepackage{graphicx}
+\graphicspath{{../../figures/}}
+
+\usepackage{subfiles}
+
+\frenchspacing
+
+\setlist[enumerate]{label=\textsf{（\hspace{-.3pt}\arabic*\hspace{-.3pt}）}\, ,
+    topsep=2pt, itemsep=1.5pt, itemindent=1\zw, leftmargin=*}
+  
+\ctikzset{resistors/width=1.1, batteries/scale=1.2, 
+    capacitors/width=0.2, capacitors/height=0.9,
+    grounds/scale=1.6}
+\ctikzset{bipoles/cuteswitch/thickness=0.23}
+
+\begin{document}
+
+    \maketitle
+    
+    \clearpage
+
+    \subfile{../2_1_expressions-proofs/all/math-standard_answers_2_1_expressions-proofs_all.tex}
+    
+    
+
+\end{document}

@@ -1,0 +1,19 @@
+\documentclass[border=1pt]{standalone}
+\usepackage{tikz}
+\usepackage{luatexja}
+
+\begin{document}
+\begin{tikzpicture}[scale=1.5]
+    % 軌道（グレーの階調で奥行きを表現）
+    \foreach \r in {0, 120, 240} {
+        \draw[very thick, black!20, rotate=\r] (0,0) ellipse (1.21cm and 0.41cm);
+        \draw[thick, black, rotate=\r] (0,0) ellipse (1.2cm and 0.4cm);
+        % 粒子（白抜きの黒丸）
+        \fill[black, rotate=\r] (1.2,0) circle (2.5pt);
+        \fill[white, rotate=\r] (1.2,0) circle (1.2pt);
+    }
+    % 中心核（重厚な黒）
+    \fill[black] (0,0) circle (5pt);
+    \draw[white, thin] (0,0) circle (3pt);
+\end{tikzpicture}
+\end{document}
