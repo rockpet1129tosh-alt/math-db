@@ -28,14 +28,9 @@
     \number#1}
 
 \usepackage{tikz}
-\usetikzlibrary{patterns,angles,quotes,arrows.meta,calc}
-
-\usepackage{circuitikz}
-
-\usepackage{lua-ul}
+\usetikzlibrary{patterns,arrows.meta,calc}
 
 \usepackage{amsmath,amssymb}
-\usepackage{autobreak}
 
 % 点線の定義
     \newcommand{\myleader}[1]{\hspace{1em}\raisebox{0.5ex}{\makebox[#1]{\dotfill}}\hspace{.5em}}
@@ -43,15 +38,13 @@
 \usepackage[italicdiff]{physics}
 
 \usepackage{ulem}
-\usepackage{fancybox}
 
 \usepackage{needspace}
-\usepackage{float}
 
 \usepackage{caption}
     \captionsetup{font=small,skip=2pt}
 \usepackage{graphicx}
-    \graphicspath{{../../figures/}}
+\newcommand{\insertmylogo}{\includegraphics[height=7mm]{../../../figures/logo_miyoshi_1/logo_miyoshi_1.pdf}}
 
 \usepackage{subfiles}
 
@@ -74,8 +67,7 @@
             {}
             {\textsf{\color{black!80}\raisebox{-4pt}{\S \, \sectiontitle}}}
     \setfoot{}{\raisebox{7pt}{\color{black!80}\thepage}}
-            {{\raisebox{1pt}{\includegraphics[height=7mm]
-                {../../figures/logo_miyoshi_1/logo_miyoshi_1_tikz.pdf}}}}
+            {{\raisebox{1pt}{\insertmylogo}}}
     }
 
     \pagestyle{main}
@@ -92,6 +84,7 @@
 
 \ModifyHeading{subsection}{font=\sffamily\large,
     label_format={\framebox[21pt][c]{\rmfamily\bfseries{{\Large{\arabic{subsection}}}}}}}
+
 \begin{document}
 
     \maketitle
