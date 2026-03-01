@@ -1,0 +1,20 @@
+\documentclass[border=1pt]{standalone}
+\usepackage{tikz}
+\usetikzlibrary{calc}
+
+\begin{document}
+\begin{tikzpicture}
+    \pgfmathsetmacro{\xa}{4.5}
+    \pgfmathsetmacro{\xb}{0.8}
+    \pgfmathsetmacro{\ya}{2.2}
+    \coordinate (B) at (0,0);
+    \coordinate (C) at (\xa,0);
+    \coordinate (A) at (\xb,\ya);
+    \coordinate (D) at ($(C)+(A)-(B)$);
+    \draw [thick] (A)--(B)--(C)--(D)--cycle;
+    \node[below left, outer sep=-1pt] at (B) {B};
+    \node[below right, outer sep=-1pt] at (C) {C};
+    \node[above right, outer sep=-1pt] at (D) {D};
+    \node[above left, outer sep=-1pt] at (A) {A};
+\end{tikzpicture}
+\end{document}

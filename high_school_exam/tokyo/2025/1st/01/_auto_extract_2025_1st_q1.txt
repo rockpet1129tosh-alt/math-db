@@ -1,0 +1,37 @@
+[Auto extract] 2025 1st 大問1
+
+--- 小問01 ---
+figure_needed_guess: NO
+text_preview: 
+
+--- 小問02 ---
+figure_needed_guess: NO
+text_preview: 
+
+--- 小問03 ---
+figure_needed_guess: NO
+text_preview: 
+
+--- 小問04 ---
+figure_needed_guess: NO
+text_preview: 
+
+--- 小問05 ---
+figure_needed_guess: NO
+text_preview: 
+
+--- 小問06 ---
+figure_needed_guess: NO
+text_preview: 
+
+--- 小問07 ---
+figure_needed_guess: NO
+text_preview: 
+
+--- 小問08 ---
+figure_needed_guess: NO
+text_preview: 
+
+--- 小問09 ---
+figure_needed_guess: NO
+text_preview: 

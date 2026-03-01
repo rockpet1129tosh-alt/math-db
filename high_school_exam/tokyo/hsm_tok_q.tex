@@ -32,17 +32,29 @@
 
 \usepackage{amsmath,amssymb}
 
+\let\mathdiv\div
+
+\usepackage{tabularx}
+\newcolumntype{L}{>{\raggedright\arraybackslash}X}
+
 % 点線の定義
     \newcommand{\myleader}[1]{\hspace{1em}\raisebox{0.5ex}{\makebox[#1]{\dotfill}}\hspace{.5em}}
 
+% 四角の空欄の設定
+    \newcommand{\myboxa}[2][2pt]{%
+        {\setlength{\fboxrule}{0.5pt}\setlength{\fboxsep}{#1}\boxed{#2}}%
+    }
+
 \usepackage[italicdiff]{physics}
+
+\let\div\mathdiv
 
 \usepackage{ulem}
 
 \usepackage{needspace}
 
 \usepackage{caption}
-    \captionsetup{font=small,skip=2pt}
+    \captionsetup{font={small,sf},skip=2pt}
 \usepackage{graphicx}
 \newcommand{\insertmylogo}{\includegraphics[height=7mm]{../../figures/logo_miyoshi_1/logo_miyoshi_1.pdf}}
 
@@ -52,7 +64,7 @@
 
 % 箇条書き設定
 \setlist[enumerate]{label=\textsf{（\hspace{-.3pt}\arabic*\hspace{-.3pt}）}\, ,
-    topsep=2pt, itemsep=1.5pt, itemindent=1\zw, leftmargin=1\zw}
+    topsep=2pt, itemsep=7pt, itemindent=1\zw, leftmargin=1\zw}
   
 % タイトル設定
 \newcommand{\mytitle}{【高校入試 数学】 東京都立〈問題編〉 ver.01}
