@@ -1,0 +1,57 @@
+# LaTeX 中間ファイル（プッシュしない）
+# ============================================
+# コンパイル時に生成される一時ファイルは除外します。
+# PDFファイルは成果物としてプッシュします。
+
+## Core LaTeX auxiliary files
+*.aux
+*.lof
+*.log
+*.lot
+*.fls
+*.out
+*.toc
+*.fmt
+*.fot
+*.cb
+*.cb2
+*.lb
+
+## Intermediate documents
+*.dvi
+*-converted-to.*
+
+## Bibliography auxiliary files
+*.bbl
+*.bcf
+*.blg
+*-blx.aux
+*-blx.bib
+*.run.xml
+
+## Build tool auxiliary files
+*.fdb_latexmk
+*.synctex
+*.synctex(busy)
+*.synctex.gz
+*.pdfsync
+
+## Additional LaTeX auxiliary files
+*.nav
+*.snm
+*.vrb
+
+## LuaTeX cache
+*.upa
+*.upb
+
+## Others
+*~
+*.backup
+*.bak
+*.sav
+
+# OS generated files
+.DS_Store
+Thumbs.db
+desktop.ini
