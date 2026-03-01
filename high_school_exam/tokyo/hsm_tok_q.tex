@@ -42,6 +42,9 @@
         {\setlength{\fboxrule}{0.5pt}\setlength{\fboxsep}{#1}\boxed{#2}}%
     }
 
+% 分子を下げた分数の設定
+    \newcommand{\myfraca}[2]{\dfrac{\raisebox{-1pt}{\,$#1$\,}}{#2}}
+    
 \usepackage[italicdiff]{physics}
 
 \let\div\mathdiv
