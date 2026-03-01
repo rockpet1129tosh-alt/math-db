@@ -45,6 +45,10 @@
 *.upa
 *.upb
 
+## Compile logs and temporary files
+*_compile.log
+compile_log.txt
+
 ## Others
 *~
 *.backup
