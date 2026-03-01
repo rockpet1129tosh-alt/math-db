@@ -8,8 +8,8 @@
     \pgfmathsetmacro{\r}{2.4}
     \draw [thick] (0,0) circle [radius=\r];
     
-    % 1-12の数字を円周上に配置（時計的に12が上）
-    \pgfmathsetmacro{\n}{12}  
+    % 1-24の数字を円周上に配置（時計的に24が上）
+    \pgfmathsetmacro{\n}{24}  
     \foreach \i in {1,2,...,\n} {
         \pgfmathsetmacro{\angle}{90 - \i * 360/\n} 
         \node at (\angle:{\r+0.25}) {\i};
