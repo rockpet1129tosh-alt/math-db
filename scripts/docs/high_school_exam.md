@@ -3,27 +3,35 @@
 ## 概要
 東京都立高校入試の数学過去問をTeX化し、体系的に管理するデータベースです。
 
-## フォルダ構造
+## フォルダ構造（実装済み）
 
+### 大問1: 小問分割型（9分割）
 ```
-high_school_exam/
-└── tokyo/              # 東京都立高校
-    └── YYYY/          # 年度（2008-2026）
-        ├── 1st/       # 第1回（前期/一般）
-        │   ├── _original/     # 原本PDF保管場所
-        │   │   ├── hsm_tok_YYYY_1st_src_q.pdf  # 問題原本
-        │   │   └── hsm_tok_YYYY_1st_src_a.pdf  # 解答原本
-        │   ├── 01/           # 大問1
-        │   │   ├── 01/       # 小問1
-        │   │   │   ├── hsm_tok_YYYY_1st_01_01_q.tex
-        │   │   │   └── hsm_tok_YYYY_1st_01_01_a.tex
-        │   │   └── 02/       # 小問2
-        │   ├── 02/           # 大問2
-        │   ├── 03/           # 大問3
-        │   ├── 04/           # 大問4
-        │   └── 05/           # 大問5
-        └── 2nd/       # 第2回（後期/二次）
-            └── （同様の構造）
+high_school_exam/tokyo/YYYY/TERM/01/
+├── 01/
+│   ├── hsm_tok_YYYY_TERM_01_01_q.tex
+│   ├── hsm_tok_YYYY_TERM_01_01_a.tex
+│   └── fig_hsm_tok_YYYY_TERM_01_01/
+│       └── fig_hsm_tok_YYYY_TERM_01_01_q.tex（TikZ）
+├── 02/ ... 03/ ... 09/
+├── hsm_tok_YYYY_TERM_01_q.tex      （親ファイル）
+├── hsm_tok_YYYY_TERM_01_a.tex      （解答）
+```
+
+### 大問2-3: 単ファイル型（分割なし）
+```
+high_school_exam/tokyo/YYYY/TERM/02/
+├── hsm_tok_YYYY_TERM_02_q.tex
+├── hsm_tok_YYYY_TERM_02_a.tex
+└── fig_hsm_tok_YYYY_TERM_02/
+    ├── fig_hsm_tok_YYYY_TERM_02_01_q.tex
+    └── fig_hsm_tok_YYYY_TERM_02_02_q.tex
+```
+
+### 大問4-5: 制作予定
+```
+high_school_exam/tokyo/YYYY/TERM/04/
+high_school_exam/tokyo/YYYY/TERM/05/
 ```
 
 ## 命名規則
@@ -48,16 +56,20 @@ high_school_exam/
 ### 特殊ファイル
 - `src` = source（原本）: 年度全体の問題・解答PDF（大問・小問番号なし）
 
-## 対応年度
+## 対応進捗
 
-### 原本配置済み
-- ✅ 2008-2019年 1st（12年分）
-- ✅ 2020-2025年 1st, 2nd（6年分 × 2回）
-- ✅ 2026年 1st（1年分）
+### ✅ 完成・伝播済み
+- **大問1（複合多問）**: 9小問分割型 → 全37年度/期間 伝播完了
+- **大問2（円周等分問題）**: 単ファイル型・2問 → 全37年度/期間 伝播完了
+- **大問3（一次関数）**: 単ファイル型・3問 → 全37年度/期間 伝播完了
 
-### 未収集
-- ⏸️ 2008-2019年 2nd（見つかり次第対応）
-- ⏸️ 2026年 2nd（実施後に追加予定）
+### 🔜 進行中・待機
+- **大問4**: Template 制作中
+- **大問5**: Template 制作予定
+
+### 📋 原本保管
+- ✅ 2008-2026年 1st/2nd 全フォルダに `_original/hsm_tok_YYYY_{1st|2nd}_src_{q|a}.pdf` 配置
+  - 年度フォルダ直下：`high_school_exam/tokyo/YYYY/1st/_original/`
 
 ## 拡張計画
 
