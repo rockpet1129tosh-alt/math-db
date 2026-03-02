@@ -5,7 +5,7 @@
 ## 概要
 
 このリポジトリは、高校数学・大学入試数学の問題・解答データベースです。
-`physics-db` を参考にした階層的な subfiles 構造を採用しています。
+`science-db` を参考にした階層的な subfiles 構造を採用しています。
 
 ### 運用ルール（重要）
 - 一括処理で自動生成される作業用ファイル（ログ、一覧、移行補助ファイル、臨時出力など）は、
@@ -99,7 +99,7 @@ math-db/
 │       └── C_suuC/                   # 数学 C （将来）
 │           └── ...
 │
-└── README_STRUCTURE.md               # このファイル
+└── scripts/README_STRUCTURE.md       # このファイル
 ```
 
 ---
@@ -287,9 +287,9 @@ high_school_exam/
 
 ---
 
-## 参考：physics-db との比較
+## 参考：science-db との比較
 
-| 項目 | physics-db | math-db |
+| 項目 | science-db | math-db |
 |------|-----------|---------|
 | プロジェクト ID | `ps` | `ms` |
 | 分野例 | 力学(me), 電磁気(em), 熱力学(th) | 数I(1), 数II(2), 数A(A) |
