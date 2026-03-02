@@ -44,6 +44,9 @@
 
 % 分子を下げた分数の設定
     \newcommand{\myfraca}[2]{\dfrac{\raisebox{-1pt}{\,$#1$\,}}{#2}}
+
+% 最適化した「弧」の設定
+    \newcommand{\myarca}[2][1.5]{#2\llap{\raisebox{1.7ex}[0pt][0pt]{\scalebox{#1}[1]{\frown}}}}
     
 \usepackage[italicdiff]{physics}
 
@@ -68,8 +71,12 @@
 \frenchspacing
 
 % 箇条書き設定
-\setlist[enumerate]{label=\textsf{（\hspace{-.3pt}\arabic*\hspace{-.3pt}）}\, ,
-    topsep=2pt, itemsep=7pt, itemindent=1\zw, leftmargin=1\zw}
+\setlist[enumerate]{label=\llap{［問\arabic*］\hspace{.2\zw}},
+    topsep=2pt, itemsep=7pt, itemindent=1\zw, leftmargin=3\zw}
+
+\setlist[enumerate,2]{label=\textcircled{\scriptsize\arabic*},
+    topsep=2pt, itemsep=5pt, leftmargin=1\zw,
+    labelwidth=1.2\zw, labelsep=.4\zw, itemindent=1\zw, align=left}
   
 % タイトル設定
 \newcommand{\mytitle}{【高校入試 数学】 東京都立〈問題編〉 ver.01}
