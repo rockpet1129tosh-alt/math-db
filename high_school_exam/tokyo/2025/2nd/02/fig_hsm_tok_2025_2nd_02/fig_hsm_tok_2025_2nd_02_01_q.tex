@@ -1,10 +1,23 @@
-\documentclass[lualatex]{standalone}
+\documentclass[border=1pt]{standalone}
 \usepackage{tikz}
-\usetikzlibrary{arrows.meta,calc,patterns}
+\usetikzlibrary{calc}
 
 \begin{document}
 \begin{tikzpicture}
-    \draw[black!60] (0,0) rectangle (4,2);
-    \node at (2,1) {\small fig: fig_hsm_tok_2025_2nd_02_01};
+    % 円を描画
+    \pgfmathsetmacro{\r}{2.4}
+    \draw [thick] (0,0) circle [radius=\r];
+    
+    % 1-12の数字を円周上に配置（時計的に12が上）
+    \pgfmathsetmacro{\n}{12}  
+    \foreach \i in {1,2,...,\n} {
+        \pgfmathsetmacro{\angle}{90 - \i * 360/\n} 
+        \node at (\angle:{\r+0.25}) {\i};
+        \fill (\angle:\r) circle (1.2pt); 
+    }
+    
+    % 中心に「O」とマーク
+    \fill (0,0) circle (1.2pt) node[below] {O};
+    %
 \end{tikzpicture}
 \end{document}
