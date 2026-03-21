@@ -244,8 +244,9 @@ lualatex -interaction=nonstopmode high_school_exam/tokyo/2010/1st/01/hsm_tok_201
 ## 7. 注意事項
 
 ### ログファイル・生成物の管理
-- LaTeX コンパイル出力 (`.log`, `.aux`, `.pdf`) は `.gitignore` 対象
-- ソース `.tex` ファイルのみ git 管理
+- LaTeX コンパイル出力のうち、`.log`・`.aux` など中間ファイルは `.gitignore` 対象
+- `.pdf` は成果物として git 管理（同期対象）
+- ソース `.tex` もあわせて git 管理
 
 ### 削除されたファイル
 - 旧フォーマットの大問ファイル (02-05 の古いバージョン) は段階的に削除 ※Phase 1 で置き換え予定
