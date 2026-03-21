@@ -2,6 +2,12 @@
 
 **更新日**: 2026年3月2日
 
+> 入口案内（2026-03-21 更新）
+>
+> - 高校入試仕様: [high_school_exam.md](high_school_exam.md)
+> - 大学入試仕様: [university_exam.md](university_exam.md)
+> - docs索引: [README.md](README.md)
+
 ---
 
 ## 1. LaTeX プリアンブル規則（hsm_tok_q.tex）

@@ -1,58 +1,40 @@
-# scripts ハブ
+# scripts ハブ（運用入口）
 
-このフォルダは、`math-db` の **運用ハブ** です。  
-自動化・移行・作業ログ・運用ドキュメントをここに集約します。
+このフォルダは `math-db` の運用ハブです。
+ルール確認、構成確認、作業ログ確認はここから開始します。
 
-## このフォルダの責務
+## まずここを見る
 
-- 一括処理で生成される補助ファイル（抽出結果、移行補助、作業ログ）を保管する
-- 運用ドキュメント（ルール、ワークフロー、構造仕様）を集約する
-- 本体 TeX データと運用資産を分離し、リポジトリを保守しやすく保つ
+1. 全体構成: [README_STRUCTURE.md](README_STRUCTURE.md)
+2. ドキュメント索引: [docs/README.md](docs/README.md)
+3. 共通運用規則: [docs/RULES.md](docs/RULES.md)
+4. 高校入試運用: [docs/high_school_exam.md](docs/high_school_exam.md)
+5. 大学入試運用: [docs/university_exam.md](docs/university_exam.md)
 
-## 先に見るべき資料
+## フォルダの役割
 
-- 構成詳細: [README_STRUCTURE.md](README_STRUCTURE.md)
-- 運用ルール: [docs/RULES.md](docs/RULES.md)
-- ワークフロー: [docs/WORKFLOW.md](docs/WORKFLOW.md)
-- 高校入試運用: [docs/high_school_exam.md](docs/high_school_exam.md)
-- テンプレート方針: [TEMPLATE-STRATEGY.md](TEMPLATE-STRATEGY.md)
-- 進捗ログ: [PROGRESS-2026-03-02.md](PROGRESS-2026-03-02.md)
+- `docs/`: 正式な運用ドキュメント
+- `compile/`: コンパイル補助スクリプト
+- `migration/`: 変換・移行関連スクリプト
+- `*.md`: 作業ログ、戦略メモ、補助記録
 
-## ディレクトリ概要
+## 現在の主要方針（要約）
 
-- `compile/` : コンパイル用スクリプト置き場（必要に応じて追加）
-- `migration/` : 移行・抽出・一時成果物の保管
-- `docs/` : 運用ドキュメント群
+### 高校入試
 
-## 運用ルール（必須）
+- `high_school_exam/tokyo/` を正本として管理
+- 年度と `1st/2nd` を維持
+- 図版は大問単位で管理
 
-- 本体 TeX（問題・解答）は `high_school_exam/` / `university_exam/` に置く
-- 自動生成の補助ファイルは `scripts/` に置く
-- ルート README は入口専用、詳細仕様は `scripts/` 側で管理する
+### 大学入試
 
-## Git 運用
+- `university_exam/tokyo-u/` を起点に整備
+- `2025/<set-id>/` を正本として管理（`sets/` 中間階層なし）
+- `_original` は試験セット直下
+- 命名規則は `uem_tok_YYYY_term_track_...`
 
-**基本方針**
-- PDF / TeX / 図版は成果物として管理対象
-- 中間ファイル（`.aux`, `.log`, `.out`, `.toc`, `.synctex.gz` など）は除外
+## 追加・更新時のチェック
 
-**理由**
-- 成果物は環境差分なく参照可能にする
-- 中間ファイルは環境依存かつ容量増の要因になる
-
-## TeX コンパイル規約（共通）
-
-- エンジン: `lualatex`
-- 日本語組版: `jlreq`
-- 図版: `standalone` + TikZ
-
-```tex
-\documentclass[lualatex,ja=standard]{jlreq}
-\usepackage{tikz}
-
-% 図版単体
-\documentclass[lualatex]{standalone}
-\usepackage{tikz}
-```
-
-注: この規約は `science-db` と共通です。
+- docs を更新する場合は、必ず [docs/README.md](docs/README.md) のリンク整合を確認
+- 新しい運用規則を追加した場合は、[README_STRUCTURE.md](README_STRUCTURE.md) に反映
+- 一時レポートを作成した場合は恒久化の要否を判断し、不要なら削除
