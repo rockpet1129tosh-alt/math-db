@@ -1,10 +1,16 @@
-\documentclass[lualatex]{standalone}
+\documentclass[border=1pt]{standalone}
 \usepackage{tikz}
-\usetikzlibrary{arrows.meta,calc,patterns}
 
 \begin{document}
 \begin{tikzpicture}
-    \draw[black!60] (0,0) rectangle (4,2);
-    \node at (2,1) {\small fig: fig_hsm_tok_2012_1st_01_08_01};
+    \pgfmathsetmacro{\xa}{.78}
+    \pgfmathsetmacro{\xb}{.3}
+    \pgfmathsetmacro{\xab}{\xa+\xb}
+    \pgfmathsetmacro{\ya}{1}
+    \foreach \n in {1,...,5} {
+        \draw[thick] ({(\n-1)*\xab},0) rectangle +(\xa,\ya);
+        \node at ({(\n-1)*\xab+0.5*\xa},0.5*\ya) { \n };
+    }
 \end{tikzpicture}
 \end{document}
+

@@ -1,10 +1,33 @@
-\documentclass[lualatex]{standalone}
+\documentclass[border=1pt]{standalone}
 \usepackage{tikz}
-\usetikzlibrary{arrows.meta,calc,patterns}
+\usepackage{luatexja}
 
 \begin{document}
-\begin{tikzpicture}
-    \draw[black!60] (0,0) rectangle (4,2);
-    \node at (2,1) {\small fig: fig_hsm_tok_2025_2nd_01_07_01};
+\begin{tikzpicture}[x=0.31cm,y=0.3cm]
+    % パラメータの定義
+    \pgfmathsetmacro{\xmax}{22}
+    \pgfmathsetmacro{\ymax}{4}
+    \pgfmathsetmacro{\da}{\ymax/10}
+    \pgfmathsetmacro{\db}{\ymax/4.2}
+
+    % 描画
+    \draw[semithick] (0,0) rectangle (\xmax,\ymax);
+    \foreach \x in {2,4,...,20} {
+        \pgfmathsetmacro{\xpos}{\xmax/22*\x}
+        \draw[dashed] (\xpos,0) -- (\xpos,\ymax);
+    }
+    \foreach \x in {0,2,...,22} {
+        \pgfmathsetmacro{\xpos}{\xmax/22*\x}
+        \node[below] at (\xpos,0) {\small{\x}};
+    }
+    \node[below right, shift={(0.2,0.07)}] at (\xmax,0) {\footnotesize{ （回）}};
+
+    \draw[thick] (\xmax/22,\ymax/2+\da) -- (\xmax/22,\ymax/2-\da);
+    \draw[thick] (\xmax/22*20,\ymax/2+\da) -- (\xmax/22*20,\ymax/2-\da);
+    \draw[thick] (\xmax/22,\ymax/2) -- (\xmax/22*20,\ymax/2);
+    
+    \draw[thick,fill=white] (\xmax/22*4,\ymax/2+\db) rectangle (\xmax/22*13,\ymax/2-\db);
+    \draw[thick] (\xmax/22*8,\ymax/2+\db) -- (\xmax/22*8,\ymax/2-\db);
 \end{tikzpicture}
 \end{document}
+

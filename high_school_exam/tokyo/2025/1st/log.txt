@@ -1,0 +1,87 @@
+This is LuaHBTeX, Version 1.22.0 (TeX Live 2025) 
+ restricted system commands enabled.
+(./hsm_tok_2025_1st_q.tex
+LaTeX2e <2025-11-01>
+L3 programming layer <2026-01-19>
+ (c:/texlive/2025/texmf-dist/tex/latex/subfiles/subfiles.cls
+Document Class: subfiles 2020/11/14 v2.2 Multi-file projects (class)
+Preamble taken from file `../../hsm_tok_q.tex'
+(c:/texlive/2025/texmf-dist/tex/latex/import/import.sty) (../../hsm_tok_q.tex
+(c:/texlive/2025/texmf-dist/tex/latex/jlreq/jlreq.cls
+Document Class: jlreq 2025/3/16 jlreq
+(c:/texlive/2025/texmf-dist/tex/latex/jlreq/jlreq-helpers.sty)
+(c:/texlive/2025/texmf-dist/tex/latex/base/fleqn.clo)
+jlreq guessed engine: lualatex
+(c:/texlive/2025/texmf-dist/tex/luatex/luatexja/luatexja.sty
+(c:/texlive/2025/texmf-dist/tex/luatex/luatexja/luatexja-core.sty
+(c:/texlive/2025/texmf-dist/tex/generic/infwarerr/infwarerr.sty)
+(c:/texlive/2025/texmf-dist/tex/luatex/luatexbase/luatexbase.sty
+(c:/texlive/2025/texmf-dist/tex/luatex/ctablestack/ctablestack.sty))
+(c:/texlive/2025/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty)
+(c:/texlive/2025/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
+(c:/texlive/2025/texmf-dist/tex/generic/iftex/iftex.sty))
+(c:/texlive/2025/texmf-dist/tex/latex/xkeyval/xkeyval.sty
+(c:/texlive/2025/texmf-dist/tex/generic/xkeyval/xkeyval.tex
+(c:/texlive/2025/texmf-dist/tex/generic/xkeyval/xkvutils.tex
+(c:/texlive/2025/texmf-dist/tex/generic/xkeyval/keyval.tex))))
+(c:/texlive/2025/texmf-dist/tex/latex/etoolbox/etoolbox.sty)
+(c:/texlive/2025/texmf-dist/tex/latex/everyhook/everyhook.sty
+(c:/texlive/2025/texmf-dist/tex/latex/svn-prov/svn-prov.sty))
+(c:/texlive/2025/texmf-dist/tex/luatex/luatexja/ltj-base.sty)
+(c:/texlive/2025/texmf-dist/tex/luatex/luatexja/ltj-latex.sty
+(c:/texlive/2025/texmf-dist/tex/luatex/luatexja/patches/lltjfont.sty
+(c:/texlive/2025/texmf-dist/tex/latex/base/tuenc.def))
+(c:/texlive/2025/texmf-dist/tex/luatex/luatexja/patches/lltjdefs.sty
+(c:/texlive/2025/texmf-dist/tex/luatex/jlreq/jfm-jlreqv.lua)
+(c:/texlive/2025/texmf-dist/tex/luatex/jlreq/jfm-jlreq.lua))
+(c:/texlive/2025/texmf-dist/tex/luatex/luatexja/patches/lltjcore.sty
+(c:/texlive/2025/texmf-dist/tex/latex/l3kernel/expl3.sty
+(c:/texlive/2025/texmf-dist/tex/latex/l3backend/l3backend-luatex.def)))
+(c:/texlive/2025/texmf-dist/tex/luatex/luatexja/patches/lltjp-atbegshi.sty)
+(c:/texlive/2025/texmf-dist/tex/luatex/luatexja/patches/lltjp-geometry.sty
+(c:/texlive/2025/texmf-dist/tex/generic/iftex/ifluatex.sty))))
+(c:/texlive/2025/texmf-dist/tex/luatex/luatexja/luatexja-compat.sty))
+(c:/texlive/2025/texmf-dist/tex/luatex/luatexja/addons/luatexja-adjust.sty)
+(c:/texlive/2025/texmf-dist/tex/latex/lm/lmodern.sty)
+(c:/texlive/2025/texmf-dist/tex/latex/sttools/stfloats.sty)
+(c:/texlive/2025/texmf-dist/tex/luatex/luatexja/patches/lltjp-stfloats.sty)
+(c:/texlive/2025/texmf-dist/tex/latex/jlreq/jlreq-complements.sty
+(c:/texlive/2025/texmf-dist/tex/latex/filehook/filehook.sty
+(c:/texlive/2025/texmf-dist/tex/latex/filehook/filehook-2020.sty))))
+(c:/texlive/2025/texmf-dist/tex/luatex/luatexja/addons/luatexja-preset.sty
+(c:/texlive/2025/texmf-dist/tex/latex/l3packages/l3keys2e/l3keys2e.sty)
+(c:/texlive/2025/texmf-dist/tex/luatex/luatexja/addons/luatexja-fontspec.sty
+(c:/texlive/2025/texmf-dist/tex/latex/fontspec/fontspec.sty
+(c:/texlive/2025/texmf-dist/tex/latex/l3packages/xparse/xparse.sty)
+(c:/texlive/2025/texmf-dist/tex/latex/fontspec/fontspec-luatex.sty
+(c:/texlive/2025/texmf-dist/tex/latex/base/fontenc.sty)
+(c:/texlive/2025/texmf-dist/tex/latex/fontspec/fontspec.cfg)))
+(c:/texlive/2025/texmf-dist/tex/luatex/luatexja/patches/lltjp-fontspec.sty)
+(c:/texlive/2025/texmf-dist/tex/luatex/luatexja/addons/luatexja-fontspec-29e.st
+y))
+
+Package luatexja-preset Warning: Japanese fonts will be scaled by
+(luatexja-preset)                0.9199981689453125.
+
+
+Package luatexja-fontspec Warning: \addjfontfeature(s) ignored;
+(luatexja-fontspec)                it cannot be used with a font that wasn't
+(luatexja-fontspec)                selected by luatexja-fontspec.
+
+) (c:/texlive/2025/texmf-dist/tex/luatex/luatexja/addons/luatexja-otf.sty
+(c:/texlive/2025/texmf-dist/tex/luatex/luatexja/addons/luatexja-ajmacros.sty))
+(c:/texlive/2025/texmf-dist/tex/latex/enumitem/enumitem.sty)
+(c:/texlive/2025/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty
+(c:/texlive/2025/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty
+(c:/texlive/2025/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty
+(c:/texlive/2025/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.tex)
+(c:/texlive/2025/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def)
+(c:/texlive/2025/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex
+(c:/texlive/2025/texmf-dist/tex/generic/pgf/pgf.revision.tex)))
+(c:/texlive/2025/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty
+(c:/texlive/2025/texmf-dist/tex/latex/graphics/graphicx.sty
+! Interruption.
+l.1 
+    2671
+l.32 \define@key
+                {Gin}{bb}

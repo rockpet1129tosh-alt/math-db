@@ -4,12 +4,12 @@
 
 \begin{document}
 \begin{tikzpicture}
-    \pgfmathsetmacro{\xa}{4.5}
-    \pgfmathsetmacro{\xb}{0.8}
-    \pgfmathsetmacro{\ya}{2.2}
+    \pgfmathsetmacro{\X}{5}
+    \pgfmathsetmacro{\d}{0.14*\X}
+    \pgfmathsetmacro{\Y}{0.46*\X}
     \coordinate (B) at (0,0);
-    \coordinate (C) at (\xa,0);
-    \coordinate (A) at (\xb,\ya);
+    \coordinate (C) at (\X,0);
+    \coordinate (A) at (\d,\Y);
     \coordinate (D) at ($(C)+(A)-(B)$);
     \draw [thick] (A)--(B)--(C)--(D)--cycle;
     \node[below left, outer sep=-1pt] at (B) {B};

@@ -1,65 +1,59 @@
 \documentclass[border=1pt]{standalone}
 \usepackage{tikz}
-\usetikzlibrary{arrows.meta,calc}
 
 \begin{document}
-\begin{tikzpicture}[x=3.1mm, y=3.1mm]
+\begin{tikzpicture}[x=2.9mm, y=2.9mm]
 
-    \pgfmathsetmacro{\xmax}{11.5}
-    \pgfmathsetmacro{\ymax}{11.5}
+    \pgfmathsetmacro{\xmax}{7.5}
+    \pgfmathsetmacro{\ymax}{21.5}
 
-    \pgfmathsetmacro{\xa}{22*\ymax/39+88/39}
-    \pgfmathsetmacro{\xb}{-22*\ymax/39+88/39}
+    \pgfmathsetmacro{\lxm}{(2*\ymax)^0.5}
 
     \pgfmathsetmacro{\d}{0.25}
 
     % 座標軸
     \draw[semithick] (-\xmax,0) -- (\xmax,0) node[right] {$x$};
-    \draw[semithick] (0,-\ymax) -- (0,\ymax) node[above] {$y$};
+    \draw[semithick] (0,-1.5) -- (0,\ymax) node[above] {$y$};
     
     % x軸・y軸の目盛り
-    \foreach \x in {-11,-10,...,11} {
+    \foreach \x in {-7,-6,...,7} {
         \draw (\x,-\d) -- (\x,\d);
     }
-    \foreach \y in {-11,-10,...,11} {
+    \foreach \y in {-1,0,...,21} {
         \draw (-\d,\y) -- (\d,\y);
     }
-    \foreach \x in {-10,10} {
+    \foreach \x in {-5,5} {
         \node[below, outer sep=1pt] at (\x,0) {$\x$};
     }
-    \foreach \y in {-10,5,10} {
+    \foreach \y in {10,15,20} {
         \node[left, outer sep=1pt] at (0,\y) {$\y$};
     }
-    \node at (-5,0) [above, outer sep=6pt] {$-5$};
-    \node at (5,0) [above, outer sep=1pt] {$5$};
-    \node at (0,-5) [right, outer sep=1pt] {$-5$};
+    \node[right, outer sep=1pt] at (0,5) {$5$};
 
-
-    % 直線 l: y = (1/2)x + 3 と 直線 m: y = (22/39)x + 88/39 を描画
-    \draw[thick] (-\xmax,{-\xmax/2+3}) -- (\xmax,{\xmax/2+3}) node[right] {$\ell$};
-    \draw[thick] (\xb,-\ymax) -- (\xa,\ymax) node[above] {$m$};
+    % y=0.5x^2のグラフ
+    \draw[thick, domain=-\lxm:\lxm, samples=200] plot (\x,{0.5*\x*\x})
+        node[above]{$\ell$};
 
     % 原点
     \node[below left] at (0,0) {$\mathrm{O}$};
     
-    % 点 A(0, -4)
-    \fill (0,-4) circle (1.5pt) node[shift={(-8.5pt,-1.5pt)}] {$\mathrm{A}$}
-    coordinate (A);
-    
-    % 点 B(-6, 0)
-    \node[below, outer sep=1.5pt] at (-6,0) {$\mathrm{B}$};
-    \coordinate (B) at (-6,0);
-    
-    % 点 P(5.5, 5.75)
-    \fill (5.5,5.75) circle (1.5pt) node[shift={(7pt,-5pt)}] {$\mathrm{P}$}
-    coordinate (P);
+    % 座標指定
+    \coordinate (A) at (-6,18);
+    \coordinate (B) at (0,18);
+    \coordinate (C) at (-6,0);
+    \coordinate (P) at (4.2,8.82);
 
-    % 点 Q(5.5, 0)
-    \fill (5.5,0) circle (1.5pt) node[below, outer sep=1pt] {$\mathrm{Q}$}
-    coordinate (Q);
-
-    % BA，AQ，PQを描画
-    \draw[semithick] (B)--(A)--(Q)--(P);
+    % 直線の描画
+    \draw[semithick] (A) -- (B) -- (P) -- (C) -- cycle;
+    \draw[semithick] (A) -- (P);
+    
+    % 点の描画
+    \fill (A) circle (1.5pt) node[left] {$\mathrm{A}$};
+    \fill (P) circle (1.5pt) node[right] {$\mathrm{P}$};
+    
+    \node[right] at (B) {$\mathrm{B}$};
+    \node[above left] at (C) {$\mathrm{C}$};
    
 \end{tikzpicture}
 \end{document}
+
