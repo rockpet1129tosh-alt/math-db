@@ -29,6 +29,66 @@ exam_units:
     question_tex: ../mei_2025_uni2/uem_mei_2025_uni2_q.tex
     answer_tex: ../mei_2025_uni2/uem_mei_2025_uni2_a.tex
 
+  - unit_id: mei_2025_pole
+    university: meiji-u
+    year: 2025
+    admission_type: general
+    set_code: pole
+    set_type: faculty
+    problem_count: null
+    target_faculties:
+      - political-economy
+    set_ref: ../mei_2025_pole
+    original_dir: ../mei_2025_pole/_original
+    problem_root: ../mei_2025_pole
+    question_tex: ../mei_2025_pole/uem_mei_2025_pole_q.tex
+    answer_tex: ../mei_2025_pole/uem_mei_2025_pole_a.tex
+
+  - unit_id: mei_2025_comm
+    university: meiji-u
+    year: 2025
+    admission_type: general
+    set_code: comm
+    set_type: faculty
+    problem_count: null
+    target_faculties:
+      - commerce
+    set_ref: ../mei_2025_comm
+    original_dir: ../mei_2025_comm/_original
+    problem_root: ../mei_2025_comm
+    question_tex: ../mei_2025_comm/uem_mei_2025_comm_q.tex
+    answer_tex: ../mei_2025_comm/uem_mei_2025_comm_a.tex
+
+  - unit_id: mei_2025_bus
+    university: meiji-u
+    year: 2025
+    admission_type: general
+    set_code: bus
+    set_type: faculty
+    problem_count: null
+    target_faculties:
+      - business-administration
+    set_ref: ../mei_2025_bus
+    original_dir: ../mei_2025_bus/_original
+    problem_root: ../mei_2025_bus
+    question_tex: ../mei_2025_bus/uem_mei_2025_bus_q.tex
+    answer_tex: ../mei_2025_bus/uem_mei_2025_bus_a.tex
+
+  - unit_id: mei_2025_icom
+    university: meiji-u
+    year: 2025
+    admission_type: general
+    set_code: icom
+    set_type: faculty
+    problem_count: null
+    target_faculties:
+      - information-and-communication
+    set_ref: ../mei_2025_icom
+    original_dir: ../mei_2025_icom/_original
+    problem_root: ../mei_2025_icom
+    question_tex: ../mei_2025_icom/uem_mei_2025_icom_q.tex
+    answer_tex: ../mei_2025_icom/uem_mei_2025_icom_a.tex
+
   - unit_id: mei_2025_scit
     university: meiji-u
     year: 2025
@@ -43,6 +103,21 @@ exam_units:
     problem_root: ../mei_2025_scit
     question_tex: ../mei_2025_scit/uem_mei_2025_scit_q.tex
     answer_tex: ../mei_2025_scit/uem_mei_2025_scit_a.tex
+
+  - unit_id: mei_2025_smth
+    university: meiji-u
+    year: 2025
+    admission_type: general
+    set_code: smth
+    set_type: faculty
+    problem_count: null
+    target_faculties:
+      - interdisciplinary-mathematical-sciences
+    set_ref: ../mei_2025_smth
+    original_dir: ../mei_2025_smth/_original
+    problem_root: ../mei_2025_smth
+    question_tex: ../mei_2025_smth/uem_mei_2025_smth_q.tex
+    answer_tex: ../mei_2025_smth/uem_mei_2025_smth_a.tex
 
   - unit_id: mei_2025_agr
     university: meiji-u
