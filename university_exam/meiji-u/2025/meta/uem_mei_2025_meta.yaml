@@ -1,0 +1,56 @@
+university: meiji-u
+university_code: mei
+year: 2025
+exam_type: general
+figure_layout: per-problem
+original_layout: per-exam-set
+naming_scheme: uem_mei_YYYY_set_problem_qa
+set_codes:
+  uni1: unified-1
+  uni2: unified-2
+  scit: science-and-technology
+  agr: agriculture
+status:
+  question: pending
+  answer: pending
+indexing:
+  searchable: false
+  include_in_print_pool: false
+  reviewed: false
+  language: ja
+metadata_version: 1
+tag_guide: ./TAG_GUIDE.yaml
+exam_units_file: ./EXAM_UNITS.yaml
+notes:
+  - Meiji-U is managed by set_code, not by term/track.
+  - Problem counts are not fixed yet. Add problem directories after confirming each set.
+  - Canonical source: 2025/mei_YYYY_set/*
+exam_sets:
+  - id: mei_2025_uni1
+    set_code: uni1
+    label_ja: 全学部統一1
+    original_dir: ../mei_2025_uni1/_original
+    question_tex: ../mei_2025_uni1/uem_mei_2025_uni1_q.tex
+    answer_tex: ../mei_2025_uni1/uem_mei_2025_uni1_a.tex
+    problem_count: null
+  - id: mei_2025_uni2
+    set_code: uni2
+    label_ja: 全学部統一2
+    original_dir: ../mei_2025_uni2/_original
+    question_tex: ../mei_2025_uni2/uem_mei_2025_uni2_q.tex
+    answer_tex: ../mei_2025_uni2/uem_mei_2025_uni2_a.tex
+    problem_count: null
+  - id: mei_2025_scit
+    set_code: scit
+    label_ja: 理工学部
+    original_dir: ../mei_2025_scit/_original
+    question_tex: ../mei_2025_scit/uem_mei_2025_scit_q.tex
+    answer_tex: ../mei_2025_scit/uem_mei_2025_scit_a.tex
+    problem_count: null
+  - id: mei_2025_agr
+    set_code: agr
+    label_ja: 農学部
+    original_dir: ../mei_2025_agr/_original
+    question_tex: ../mei_2025_agr/uem_mei_2025_agr_q.tex
+    answer_tex: ../mei_2025_agr/uem_mei_2025_agr_a.tex
+    problem_count: null

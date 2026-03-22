@@ -20,6 +20,50 @@
 - **東大は前期のみ**。後期（l）は作成しない。
 - term コードは `f` 固定。tracks は `sci` / `hum`。
 
+## 2A. Meiji-U の雛形仕様
+
+### 2A.1 試験構成
+
+| 試験セット | コード | 大問数 | 備考 |
+|---|---|---|---|
+| 全学部統一1 | `uni1` | 未確定 | 統一方式 |
+| 全学部統一2 | `uni2` | 未確定 | 統一方式 |
+| 理工学部 | `scit` | 未確定 | 学部別 |
+| 農学部 | `agr` | 未確定 | 学部別 |
+
+- Meiji-U は `term/track` ではなく `set_code` で管理する。
+- 2025 時点では、問題数未確定のためセット雛形と meta のみ作成し、大問ファイルは未展開。
+
+### 2A.2 命名規則
+
+- `uem_mei_YYYY_set_q.tex`
+- `uem_mei_YYYY_set_a.tex`
+- `uem_mei_YYYY_set_problem_q.tex`
+- `uem_mei_YYYY_set_problem_a.tex`
+
+例:
+
+- `uem_mei_2025_uni1_q.tex`
+- `uem_mei_2025_scit_q.tex`
+- `uem_mei_2025_agr_01_q.tex`
+
+### 2A.3 階層イメージ
+
+```
+university_exam/meiji-u/
+├── uem_mei_q.tex
+├── uem_mei_a.tex
+├── uem_mei_0master.tex
+└── 2025/
+	├── uem_mei_2025_q.tex
+	├── uem_mei_2025_a.tex
+	├── mei_2025_uni1/
+	├── mei_2025_uni2/
+	├── mei_2025_scit/
+	├── mei_2025_agr/
+	└── meta/
+```
+
 ### 2.2 大元ファイル（ルート）
 
 | ファイル | 役割 |
@@ -39,6 +83,19 @@
 | `YYYY/tok_YYYY_f_sci/NN/uem_tok_YYYY_f_sci_NN_q.tex` | `../../../uem_tok_q.tex` |
 
 すべて `uem_tok_q.tex` / `uem_tok_a.tex` に向ける（1階層上を指すチェーンは使わない）。
+
+### 2.4 `0master` 運用ルール（共通プリンブル）
+
+- `uem_*_0master.tex` は **共通プリンブル断片** として扱う（`\documentclass` と `\begin{document}` を置かない）。
+- 実親は `uem_*_q.tex` / `uem_*_a.tex` とし、各実親で `\documentclass` を宣言したうえで `\input{uem_*_0master.tex}` を読む。
+- 子ファイル（年度・セット・大問）は、`q` 系は `uem_*_q.tex`、`a` 系は `uem_*_a.tex` を参照する。
+- 子ファイルから `uem_*_0master.tex` を直接参照しない（q/a差分タイトルや設定が失われるため）。
+
+コンパイル運用:
+
+- `0master` は単体コンパイル対象にしない。
+- LaTeX Workshop の `rootFiles.exclude` と `watch.files.ignore` に `uem_*_0master.tex` を登録する。
+- 子ファイル単体ビルドは作業ディレクトリ依存を避けるため `latexmk -cd` を推奨。
 
 ## 3. 階層設計
 
@@ -100,6 +157,16 @@ uem_tok_YYYY_q.tex                      ← 年度集約（term/trackを省略�
 | track | `sci` | 理科 |
 | track | `hum` | 文科 |
 
+私大セット型の例:
+
+| 区分 | コード | 意味 |
+|---|---|---|
+| univ | `mei` | meiji-u |
+| set | `uni1` | 全学部統一1 |
+| set | `uni2` | 全学部統一2 |
+| set | `scit` | 理工学部 |
+| set | `agr` | 農学部 |
+
 ## 5. メタデータ運用
 
 ### 5.1 構成ファイル（年度直下 `meta/`）
@@ -130,6 +197,7 @@ uem_tok_YYYY_q.tex                      ← 年度集約（term/trackを省略�
 2. f_sci: 6問、f_hum: 4問 を確定（2025実ファイルで検証済み）。
 3. 2025 meta から l_common を削除、problem_count を修正。
 4. 2020〜2024 の雛形を一括作成。
+5. Meiji-U 2025 の4セット雛形（`uni1` / `uni2` / `scit` / `agr`）を追加。
 
 ## 7. 今後の作業計画
 
@@ -158,3 +226,4 @@ uem_tok_YYYY_q.tex                      ← 年度集約（term/trackを省略�
 - [ ] `_original/` は試験セット直下に置いたか。
 - [ ] `meta/uem_tok_YYYY_meta.yaml` と `EXAM_UNITS.yaml` を作成したか。
 - [ ] 旧階層（`f/l` 直下）に依存していないか。
+- [ ] `uem_*_0master.tex` は「共通プリンブル断片」として運用されているか（子が直接参照していないか）。

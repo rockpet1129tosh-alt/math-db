@@ -1,0 +1,89 @@
+\jlreqsetup{caption_font=\normalfont, caption_label_font=\normalfont}
+
+\usepackage[deluxe,match,jfm_yoko=jlreq,jfm_tate=jlreqv]{luatexja-preset}
+\usepackage{luatexja-otf}
+
+\usepackage{enumitem}
+
+\usepackage{tikz}
+\usetikzlibrary{patterns,arrows.meta,calc}
+
+\usepackage{amsmath,amssymb}
+
+\let\mathdiv\div
+
+\newcommand{\myleader}[1]{\hspace{1em}\raisebox{0.5ex}{\makebox[#1]{\dotfill}}\hspace{.5em}}
+
+\newcommand{\myboxa}[2][2pt]{%
+    {\setlength{\fboxrule}{0.5pt}\setlength{\fboxsep}{#1}\boxed{#2}}%
+}
+
+\newcommand{\myfraca}[2]{\dfrac{\raisebox{-1pt}{\,$#1$\,}}{\,#2\,}}
+
+\newcommand{\myarca}[2][1.5]{#2\llap{\raisebox{1.7ex}[0pt][0pt]{\scalebox{#1}[1]{\frown}}}}
+
+\usepackage[italicdiff]{physics}
+
+\let\div\mathdiv
+
+\usepackage{ulem}
+
+\usepackage{needspace}
+
+\usepackage{tcolorbox}
+
+\usepackage{tabularx}
+\newcolumntype{L}{>{\raggedright\arraybackslash}X}
+
+\usepackage{caption}
+\captionsetup{font={small,sf},skip=2pt}
+\usepackage{graphicx}
+\newcommand{\insertmylogo}{\includegraphics[height=7mm]{../../figures/logo_miyoshi_1/logo_miyoshi_1.pdf}}
+
+\usepackage{subfiles}
+
+\frenchspacing
+
+\setlist[enumerate]{label=(\arabic*), align=right,
+    topsep=5pt, itemsep=5pt, itemindent=1\zw, leftmargin=1\zw, labelsep=.6\zw}
+
+\setlist[enumerate,2]{label=(\roman*), align=right,
+    topsep=3pt, itemsep=3pt, itemindent=0pt, leftmargin=2\zw, labelsep=.6\zw}
+
+\title{}
+\author{}
+\date{}
+
+\usepackage{titleps}
+\newpagestyle{main}{
+    \sethead{{\raisebox{-4pt}{\textsf{\color{black!80}\mytitle}}}}{}{{\textsf{\color{black!80}\raisebox{-4pt}{\S \, \sectiontitle}}}}
+    \setfoot{}{\raisebox{7pt}{\color{black!80}\thepage}}{{\raisebox{1pt}{\insertmylogo}}}
+}
+
+\pagestyle{main}
+
+\ModifyHeading{section}{lines=2,label_format={\S},
+    format={%
+        \begin{tikzpicture}
+        \useasboundingbox (0,0) rectangle (0,0);
+        \fill[black!50] (0,-4pt) rectangle (8pt,14pt);
+        \draw[black!50,line width=1pt] (0,-4pt) -- (\linewidth,-4pt);
+        \end{tikzpicture}%
+    \hspace{1\zw}#1#2}}
+
+\ModifyHeading{subsection}{font=\sffamily\large,
+    label_format={\framebox[21pt][c]{\rmfamily\bfseries{{\Large{\arabic{subsection}}}}}}}
+
+\setlength{\columnseprule}{0.4pt}
+\setlength{\mathindent}{3\zw}
+
+\setlength{\lineskip}{4pt}
+\setlength{\lineskiplimit}{4pt}
+
+\setlength{\fboxsep}{5pt}
+\setlength{\fboxrule}{1.0pt}
+
+\setlength{\intextsep}{4pt}
+\setlength{\floatsep}{0pt}
+\setlength{\textfloatsep}{0pt}
+\setlength{\abovecaptionskip}{0pt}

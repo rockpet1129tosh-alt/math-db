@@ -1,0 +1,60 @@
+exam_units:
+  - unit_id: mei_2025_uni1
+    university: meiji-u
+    year: 2025
+    admission_type: general
+    set_code: uni1
+    set_type: unified
+    problem_count: null
+    target_faculties:
+      - all
+    set_ref: ../mei_2025_uni1
+    original_dir: ../mei_2025_uni1/_original
+    problem_root: ../mei_2025_uni1
+    question_tex: ../mei_2025_uni1/uem_mei_2025_uni1_q.tex
+    answer_tex: ../mei_2025_uni1/uem_mei_2025_uni1_a.tex
+
+  - unit_id: mei_2025_uni2
+    university: meiji-u
+    year: 2025
+    admission_type: general
+    set_code: uni2
+    set_type: unified
+    problem_count: null
+    target_faculties:
+      - all
+    set_ref: ../mei_2025_uni2
+    original_dir: ../mei_2025_uni2/_original
+    problem_root: ../mei_2025_uni2
+    question_tex: ../mei_2025_uni2/uem_mei_2025_uni2_q.tex
+    answer_tex: ../mei_2025_uni2/uem_mei_2025_uni2_a.tex
+
+  - unit_id: mei_2025_scit
+    university: meiji-u
+    year: 2025
+    admission_type: general
+    set_code: scit
+    set_type: faculty
+    problem_count: null
+    target_faculties:
+      - science-and-technology
+    set_ref: ../mei_2025_scit
+    original_dir: ../mei_2025_scit/_original
+    problem_root: ../mei_2025_scit
+    question_tex: ../mei_2025_scit/uem_mei_2025_scit_q.tex
+    answer_tex: ../mei_2025_scit/uem_mei_2025_scit_a.tex
+
+  - unit_id: mei_2025_agr
+    university: meiji-u
+    year: 2025
+    admission_type: general
+    set_code: agr
+    set_type: faculty
+    problem_count: null
+    target_faculties:
+      - agriculture
+    set_ref: ../mei_2025_agr
+    original_dir: ../mei_2025_agr/_original
+    problem_root: ../mei_2025_agr
+    question_tex: ../mei_2025_agr/uem_mei_2025_agr_q.tex
+    answer_tex: ../mei_2025_agr/uem_mei_2025_agr_a.tex
