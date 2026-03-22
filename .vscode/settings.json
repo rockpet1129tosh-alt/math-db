@@ -1,0 +1,8 @@
+{
+  "latex-workshop.latex.search.rootFiles.exclude": [
+    "**/university_exam/tokyo-u/uem_tok_0master.tex"
+  ],
+  "latex-workshop.latex.watch.files.ignore": [
+    "**/university_exam/tokyo-u/uem_tok_0master.tex"
+  ]
+}
