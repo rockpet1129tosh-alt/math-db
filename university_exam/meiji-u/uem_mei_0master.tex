@@ -40,11 +40,15 @@
     topsep=7pt, itemsep=7pt, itemindent=1\zw, leftmargin=1\zw, labelsep=.6\zw}
 
 \setlist[enumerate,2]{label=(\roman*), align=right,
-    topsep=3pt, itemsep=3pt, itemindent=0pt, leftmargin=3\zw, labelsep=.6\zw}
+    topsep=2pt, itemsep=2pt, itemindent=0pt, leftmargin=3\zw, labelsep=.6\zw}
 
 \newlist{myenua}{enumerate}{3}
 \setlist[myenua]{label=(\roman*), align=right,
-    topsep=3pt, itemsep=3pt, itemindent=0pt, leftmargin=3\zw, labelsep=.6\zw}
+    topsep=2pt, itemsep=2pt, itemindent=0pt, leftmargin=3\zw, labelsep=.6\zw}
+
+\newlist{myenub}{enumerate}{3}
+\setlist[myenub]{label=\raisebox{.7pt}{\textcircled{\raisebox{-.28pt}{\footnotesize{\arabic*}}}},
+    align=right, topsep=2pt, itemsep=2pt, itemindent=1\zw, leftmargin=1\zw, labelsep=.6\zw}
 
 \title{}
 \author{}
@@ -77,8 +81,9 @@
 \setlength{\columnseprule}{0.4pt}
 \setlength{\mathindent}{3\zw}
 
-\setlength{\lineskip}{4pt}
-\setlength{\lineskiplimit}{4pt}
+\setlength{\jot}{0pt}
+\setlength{\lineskip}{7.5pt}
+\setlength{\lineskiplimit}{7.5pt}
 
 \setlength{\fboxsep}{5pt}
 \setlength{\fboxrule}{1.0pt}
@@ -98,6 +103,9 @@
 \newcommand{\myboxb}[2][2pt]{%
     {\setlength{\fboxrule}{1pt}\setlength{\fboxsep}{#1}\boxed{\textsf{\hspace{.2\zw}#2\hspace{.2\zw}}}}%
 }
+\newcommand{\myboxbs}[2][1pt]{%
+    {\setlength{\fboxrule}{1pt}\setlength{\fboxsep}{#1}\boxed{\textsf{#2}}}%
+}
 \newcommand{\myboxc}[2][1.1pt]{%
     {%
         \setlength{\fboxrule}{.5pt}\setlength{\fboxsep}{1pt}%
@@ -113,9 +121,13 @@
 }
 
 % 独自分数の設定
-\newcommand{\myfraca}[2]{\dfrac{\raisebox{-1pt}{\,$#1$\,}}{\,#2\,}}
-\newcommand{\myfracb}[2]{\dfrac{\raisebox{0pt}{\,$#1$\,}}{\,#2\,}}
-\newcommand{\myfracc}[2]{\dfrac{\raisebox{1pt}{\,$#1$\,}}{\,#2\,}}
+\newcommand{\myfraca}[2]{\dfrac{\raisebox{-1.5pt}{\,$#1$\,}}{\,#2\,}}
+\newcommand{\myfracb}[2]{\dfrac{\raisebox{-1.5pt}{\,$#1$\,}}{\raisebox{1.7pt}{\,$#2$\,}}}
+\newcommand{\myfracc}[2]{\dfrac{\,#1\,}{\,#2\,}}
+\newcommand{\myfracd}[2]{\dfrac{\,#1\,}{\raisebox{1.7pt}{\,$#2$\,}}}
 
 % 独自弧の設定
 \newcommand{\myarca}[2][1.5]{#2\llap{\raisebox{1.7ex}[0pt][0pt]{\scalebox{#1}[1]{\frown}}}}
+
+% 独自ベクトルの設定
+\newcommand{\vecb}[1]{\overrightarrow{#1\vphantom{b}}}
