@@ -36,8 +36,8 @@
 \frenchspacing
 
 % 箇条書き設定
-\setlist[enumerate]{label=\raisebox{.5pt}{(}\arabic*\raisebox{.5pt}{)}, align=right,
-    topsep=7pt, itemsep=7pt, itemindent=1\zw, leftmargin=1\zw, labelsep=.6\zw}
+\setlist[enumerate]{label=〔問\arabic*〕, align=right,
+    topsep=7pt, itemsep=7pt, itemindent=1\zw, leftmargin=3\zw, labelsep=.6\zw}
 
 \setlist[enumerate,2]{label=\raisebox{.5pt}{(}\roman*\raisebox{.5pt}{)}, align=right,
     topsep=2pt, itemsep=2pt, itemindent=0pt, leftmargin=3\zw, labelsep=.6\zw}
@@ -83,7 +83,7 @@
 
 \ModifyHeading{subsection}{font=\sffamily\large,
     label_format={\framebox[21pt][c]%
-    {\rmfamily\bfseries{\scalebox{0.7}[1.0]{\Large{\Roman{subsection}}}}}}}
+    {\rmfamily\bfseries{\Large{\arabic{subsection}}}}}}
 
 % 長さの設定
 \setlength{\columnseprule}{0.4pt}
@@ -149,3 +149,12 @@
 
 % 独自ベクトルの設定
 \newcommand{\vecb}[1]{\overrightarrow{#1\vphantom{b}}}
+
+% 独自四角囲み段落の設定
+    \newtcolorbox{mycolorboxa}[1][]%
+        {%
+            colback=white, coltitle=black, colbacktitle=white,colframe=black, 
+            toptitle=1pt, bottomtitle=1pt,
+            arc=4pt, boxrule=0.5pt, before upper={\parindent=1\zw},
+            left=3pt, right=3pt, top=3pt, bottom=4pt, #1
+        }

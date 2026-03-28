@@ -50,6 +50,14 @@
 \setlist[myenub]{label=\raisebox{.7pt}{\textcircled{\raisebox{-.28pt}{\footnotesize{\arabic*}}}},
     align=right, topsep=2pt, itemsep=2pt, itemindent=1\zw, leftmargin=1\zw, labelsep=.6\zw}
 
+\newlist{myenuc}{enumerate}{3}
+\setlist[myenuc]{label=\arabic*., align=right,
+    topsep=7pt, itemsep=7pt, itemindent=1\zw, leftmargin=1\zw, labelsep=.8\zw}
+
+\newlist{myenud}{enumerate}{3}
+\setlist[myenud]{label=\raisebox{.5pt}{(}\arabic*\raisebox{.5pt}{)}, align=right,
+    topsep=4pt, itemsep=4pt, itemindent=1\zw, leftmargin=1\zw, labelsep=.6\zw}
+
 \title{}
 \author{}
 \date{}
@@ -93,31 +101,38 @@
 \setlength{\textfloatsep}{0pt}
 \setlength{\abovecaptionskip}{0pt}
 
+% 独自カッコつき数字の設定
+\newcommand{\mynumbera}[1]{\raisebox{.5pt}{(}#1\raisebox{.5pt}{)}}
+
 % 独自リーダーの設定
 \newcommand{\myleader}[1]{\hspace{1em}\raisebox{0.5ex}{\makebox[#1]{\dotfill}}\hspace{.5em}}
 
 % 独自ボックスの設定
 \newcommand{\myboxa}[2][2pt]{%
-    {\setlength{\fboxrule}{.5pt}\setlength{\fboxsep}{#1}\boxed{\textsf{\hspace{.2\zw}#2\hspace{.2\zw}}}}%
+    {\setlength{\fboxrule}{.5pt}\setlength{\fboxsep}{#1}\boxed{\makebox[3.4\zw][c]{#2}}}%
 }
 \newcommand{\myboxb}[2][2pt]{%
-    {\setlength{\fboxrule}{1pt}\setlength{\fboxsep}{#1}\boxed{\textsf{\hspace{.2\zw}#2\hspace{.2\zw}}}}%
+    {\setlength{\fboxrule}{1pt}\setlength{\fboxsep}{#1}\boxed{\makebox[3.4\zw][c]{\textsf{#2}}}}%
 }
-\newcommand{\myboxbs}[2][1pt]{%
-    {\setlength{\fboxrule}{1pt}\setlength{\fboxsep}{#1}\boxed{\textsf{#2}}}%
+\newcommand{\myboxbs}[2][1.2pt]{%
+    {\setlength{\fboxrule}{1pt}\setlength{\fboxsep}{#1}%
+    \boxed{\makebox[2.4\zw][c]{\footnotesize{\textsf{#2}}}}}%
 }
 \newcommand{\myboxc}[2][1.1pt]{%
     {%
         \setlength{\fboxrule}{.5pt}\setlength{\fboxsep}{1pt}%
-        \fbox{\setlength{\fboxsep}{#1}\fbox{\textsf{\hspace{.2\zw}#2\hspace{.2\zw}}}}%
+        \fbox{\setlength{\fboxsep}{#1}\fbox{\makebox[3.4\zw][c]{#2}}}%
     }%
 }
 \newcommand{\myboxd}[2][1.1pt]{%
     {%
         \setlength{\fboxrule}{1pt}\setlength{\fboxsep}{1pt}%
         \fbox{\setlength{\fboxrule}{.5pt}\setlength{\fboxsep}{#1}%
-        \fbox{\textsf{\hspace{.2\zw}#2\hspace{.2\zw}}}}%
+        \fbox{\makebox[3.4\zw][c]{\textsf{#2}}}}%
     }%
+}
+\newcommand{\myboxe}[2][2pt]{%
+    {\setlength{\fboxrule}{1pt}\setlength{\fboxsep}{#1}\boxed{\makebox[3.4\zw][c]{#2}}}%
 }
 
 % 独自分数の設定

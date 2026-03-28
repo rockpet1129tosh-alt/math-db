@@ -1,10 +1,12 @@
 {
   "latex-workshop.latex.search.rootFiles.exclude": [
     "**/university_exam/tokyo-u/uem_tok_0master.tex",
-    "**/university_exam/meiji-u/uem_mei_0master.tex"
+    "**/university_exam/meiji-u/uem_mei_0master.tex",
+    "**/high_school_exam/tokyo/hsm_tok_0master.tex"
   ],
   "latex-workshop.latex.watch.files.ignore": [
     "**/university_exam/tokyo-u/uem_tok_0master.tex",
-    "**/university_exam/meiji-u/uem_mei_0master.tex"
+    "**/university_exam/meiji-u/uem_mei_0master.tex",
+    "**/high_school_exam/tokyo/hsm_tok_0master.tex"
   ]
 }
