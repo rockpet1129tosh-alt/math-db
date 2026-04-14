@@ -58,6 +58,10 @@
 \setlist[myenud]{label=\raisebox{.5pt}{(}\arabic*\raisebox{.5pt}{)}, align=right,
     topsep=4pt, itemsep=4pt, itemindent=1\zw, leftmargin=1\zw, labelsep=.6\zw}
 
+\newlist{myitema}{itemize}{3}
+\setlist[myitema]{font=\textsf, topsep=4pt, itemsep=2pt,
+     leftmargin=1\zw, labelsep=.6\zw, itemindent=1\zw}
+
 \title{}
 \author{}
 \date{}
@@ -155,6 +159,19 @@
         {%
             colback=white, coltitle=black, colbacktitle=white,colframe=black, 
             toptitle=1pt, bottomtitle=1pt,
-            arc=4pt, boxrule=0.5pt, before upper={\parindent=1\zw},
+            arc=4pt, boxrule=0.5pt,
+            before upper={%
+                \parindent=1\zw 
+                \setlength{\lineskiplimit}{7.5pt} % これ以下なら lineskip を適用
+                \setlength{\lineskip}{7.5pt}      % 行がぶつかる時の最低限の隙間
+            },
             left=3pt, right=3pt, top=3pt, bottom=4pt, #1
         }
+
+% 独自相似記号の設定
+\newcommand{\jsim}{\mathrel{\text{∽}}}
+\newcommand{\jequiv}{\mathrel{\text{≡}}}
+\newcommand{\jequal}{\mathrel{\text{＝}}}
+\newcommand{\jleqq}{\mathrel{\text{≦}}}
+\newcommand{\jgeqq}{\mathrel{\text{≧}}}
+\newcommand{\jcolon}{\mathbin{\text{：}}}

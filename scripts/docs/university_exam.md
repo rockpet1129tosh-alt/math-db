@@ -41,28 +41,28 @@
 
 ### 2A.2 命名規則
 
-- `uem_mei_YYYY_set_q.tex`
-- `uem_mei_YYYY_set_a.tex`
-- `uem_mei_YYYY_set_problem_q.tex`
-- `uem_mei_YYYY_set_problem_a.tex`
+- `uem_mat_mei_YYYY_set_q.tex`
+- `uem_mat_mei_YYYY_set_a.tex`
+- `uem_mat_mei_YYYY_set_problem_q.tex`
+- `uem_mat_mei_YYYY_set_problem_a.tex`
 
 例:
 
-- `uem_mei_2025_uni1_q.tex`
-- `uem_mei_2025_pole_q.tex`
-- `uem_mei_2025_scit_q.tex`
-- `uem_mei_2025_smth_01_q.tex`
+- `uem_mat_mei_2025_uni1_q.tex`
+- `uem_mat_mei_2025_pole_q.tex`
+- `uem_mat_mei_2025_scit_q.tex`
+- `uem_mat_mei_2025_smth_01_q.tex`
 
 ### 2A.3 階層イメージ
 
 ```
 university_exam/meiji-u/
-├── uem_mei_q.tex
-├── uem_mei_a.tex
-├── uem_mei_0master.tex
+├── uem_mat_mei_q.tex
+├── uem_mat_mei_a.tex
+├── uem_mat_mei_0master.tex
 └── 2025/
-	├── uem_mei_2025_q.tex
-	├── uem_mei_2025_a.tex
+	├── uem_mat_mei_2025_q.tex
+	├── uem_mat_mei_2025_a.tex
 	├── mei_2025_uni1/
 	├── mei_2025_uni2/
 	├── mei_2025_pole/
@@ -79,8 +79,8 @@ university_exam/meiji-u/
 
 | ファイル | 役割 |
 |---|---|
-| `university_exam/tokyo-u/uem_tok_q.tex` | 問題集 ルート（jlreq preamble） |
-| `university_exam/tokyo-u/uem_tok_a.tex` | 解答集 ルート（jlreq preamble） |
+| `university_exam/tokyo-u/uem_mat_tok_q.tex` | 問題集 ルート（jlreq preamble） |
+| `university_exam/tokyo-u/uem_mat_tok_a.tex` | 解答集 ルート（jlreq preamble） |
 
 - 全 subfile の `\documentclass[...]{subfiles}` は**必ずこのルートを指す**。
 - 中間 aggregator（年度・セット集約）は subfile であり preamble を持たないため、チェーン参照は不可。
@@ -89,52 +89,52 @@ university_exam/meiji-u/
 
 | ファイル階層 | `\documentclass` に書くパス |
 |---|---|
-| `YYYY/uem_tok_YYYY_q.tex` | `../uem_tok_q.tex` |
-| `YYYY/tok_YYYY_f_sci/uem_tok_YYYY_f_sci_q.tex` | `../../uem_tok_q.tex` |
-| `YYYY/tok_YYYY_f_sci/NN/uem_tok_YYYY_f_sci_NN_q.tex` | `../../../uem_tok_q.tex` |
+| `YYYY/uem_mat_tok_YYYY_q.tex` | `../uem_mat_tok_q.tex` |
+| `YYYY/tok_YYYY_f_sci/uem_mat_tok_YYYY_f_sci_q.tex` | `../../uem_mat_tok_q.tex` |
+| `YYYY/tok_YYYY_f_sci/NN/uem_mat_tok_YYYY_f_sci_NN_q.tex` | `../../../uem_mat_tok_q.tex` |
 
-すべて `uem_tok_q.tex` / `uem_tok_a.tex` に向ける（1階層上を指すチェーンは使わない）。
+すべて `uem_mat_tok_q.tex` / `uem_mat_tok_a.tex` に向ける（1階層上を指すチェーンは使わない）。
 
 ### 2.4 `0master` 運用ルール（共通プリンブル）
 
-- `uem_*_0master.tex` は **共通プリンブル断片** として扱う（`\documentclass` と `\begin{document}` を置かない）。
-- 実親は `uem_*_q.tex` / `uem_*_a.tex` とし、各実親で `\documentclass` を宣言したうえで `\input{uem_*_0master.tex}` を読む。
-- 子ファイル（年度・セット・大問）は、`q` 系は `uem_*_q.tex`、`a` 系は `uem_*_a.tex` を参照する。
-- 子ファイルから `uem_*_0master.tex` を直接参照しない（q/a差分タイトルや設定が失われるため）。
+- `uem_mat_*_0master.tex` は **共通プリンブル断片** として扱う（`\documentclass` と `\begin{document}` を置かない）。
+- 実親は `uem_mat_*_q.tex` / `uem_mat_*_a.tex` とし、各実親で `\documentclass` を宣言したうえで `\input{uem_mat_*_0master.tex}` を読む。
+- 子ファイル（年度・セット・大問）は、`q` 系は `uem_mat_*_q.tex`、`a` 系は `uem_mat_*_a.tex` を参照する。
+- 子ファイルから `uem_mat_*_0master.tex` を直接参照しない（q/a差分タイトルや設定が失われるため）。
 
 コンパイル運用:
 
 - `0master` は単体コンパイル対象にしない。
-- LaTeX Workshop の `rootFiles.exclude` と `watch.files.ignore` に `uem_*_0master.tex` を登録する。
+- LaTeX Workshop の `rootFiles.exclude` と `watch.files.ignore` に `uem_mat_*_0master.tex` を登録する。
 - 子ファイル単体ビルドは作業ディレクトリ依存を避けるため `latexmk -cd` を推奨。
 
 ## 3. 階層設計
 
 ```
 university_exam/tokyo-u/
-├── uem_tok_q.tex              ← ルート（問題）
-├── uem_tok_a.tex              ← ルート（解答）
+├── uem_mat_tok_q.tex              ← ルート（問題）
+├── uem_mat_tok_a.tex              ← ルート（解答）
 ├── YYYY/
-│   ├── uem_tok_YYYY_q.tex     ← 年度集約（問題）
-│   ├── uem_tok_YYYY_a.tex     ← 年度集約（解答）
+│   ├── uem_mat_tok_YYYY_q.tex     ← 年度集約（問題）
+│   ├── uem_mat_tok_YYYY_a.tex     ← 年度集約（解答）
 │   ├── tok_YYYY_f_sci/        ← 試験セット（前期理科）
-│   │   ├── uem_tok_YYYY_f_sci_q.tex
-│   │   ├── uem_tok_YYYY_f_sci_a.tex
+│   │   ├── uem_mat_tok_YYYY_f_sci_q.tex
+│   │   ├── uem_mat_tok_YYYY_f_sci_a.tex
 │   │   ├── 01/ ～ 06/
-│   │   │   ├── uem_tok_YYYY_f_sci_NN_q.tex
-│   │   │   ├── uem_tok_YYYY_f_sci_NN_a.tex
-│   │   │   └── fig_uem_tok_YYYY_f_sci_NN/  ← 図版フォルダ
+│   │   │   ├── uem_mat_tok_YYYY_f_sci_NN_q.tex
+│   │   │   ├── uem_mat_tok_YYYY_f_sci_NN_a.tex
+│   │   │   └── fig_uem_mat_tok_YYYY_f_sci_NN/  ← 図版フォルダ
 │   │   └── _original/
 │   ├── tok_YYYY_f_hum/        ← 試験セット（前期文科）
-│   │   ├── uem_tok_YYYY_f_hum_q.tex
-│   │   ├── uem_tok_YYYY_f_hum_a.tex
+│   │   ├── uem_mat_tok_YYYY_f_hum_q.tex
+│   │   ├── uem_mat_tok_YYYY_f_hum_a.tex
 │   │   ├── 01/ ～ 04/
-│   │   │   ├── uem_tok_YYYY_f_hum_NN_q.tex
-│   │   │   ├── uem_tok_YYYY_f_hum_NN_a.tex
-│   │   │   └── fig_uem_tok_YYYY_f_hum_NN/
+│   │   │   ├── uem_mat_tok_YYYY_f_hum_NN_q.tex
+│   │   │   ├── uem_mat_tok_YYYY_f_hum_NN_a.tex
+│   │   │   └── fig_uem_mat_tok_YYYY_f_hum_NN/
 │   │   └── _original/
 │   └── meta/
-│       ├── uem_tok_YYYY_meta.yaml
+│       ├── uem_mat_tok_YYYY_meta.yaml
 │       ├── EXAM_UNITS.yaml
 │       └── TAG_GUIDE.yaml
 ```

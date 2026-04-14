@@ -429,13 +429,13 @@ lualatex -interaction=nonstopmode fig_hsm_tok_YYYY_TERM_PP_QQ_RR_q.tex
 - 9セット運用へ更新済み（`uni1`, `uni2`, `pole`, `comm`, `bus`, `icom`, `scit`, `smth`, `agr`）。
 - `math` コードは採用せず、総合数理は `smth` で統一。
 - 追加された下層構造を確認:
-  - `university_exam/meiji-u/2025/mei_2025_uni1/01/uem_mei_2025_uni1_01_q.tex`
-  - `university_exam/meiji-u/2025/mei_2025_uni1/01/01/uem_mei_2025_uni1_01_01_q.tex`
-  - `university_exam/meiji-u/2025/mei_2025_uni1/01/02/uem_mei_2025_uni1_01_02_q.tex`
-  - `university_exam/meiji-u/2025/mei_2025_uni1/01/03/uem_mei_2025_uni1_01_03_q.tex`
-  - `university_exam/meiji-u/2025/mei_2025_uni1/01/04/uem_mei_2025_uni1_01_04_q.tex`
+  - `university_exam/meiji-u/2025/mei_2025_uni1/01/uem_mat_mei_2025_uni1_01_q.tex`
+  - `university_exam/meiji-u/2025/mei_2025_uni1/01/01/uem_mat_mei_2025_uni1_01_01_q.tex`
+  - `university_exam/meiji-u/2025/mei_2025_uni1/01/02/uem_mat_mei_2025_uni1_01_02_q.tex`
+  - `university_exam/meiji-u/2025/mei_2025_uni1/01/03/uem_mat_mei_2025_uni1_01_03_q.tex`
+  - `university_exam/meiji-u/2025/mei_2025_uni1/01/04/uem_mat_mei_2025_uni1_01_04_q.tex`
 - `mei_2025_uni1` セットは雛形から1段掘り下げた参照へ移行:
-  - `uem_mei_2025_uni1_q.tex` で `01/uem_mei_2025_uni1_01_q.tex` を直接参照。
-- `uem_mei_0master.tex` と `uem_tok_0master.tex` は enumerate 第2階層の左余白が `3\zw` に調整済み。
+  - `uem_mat_mei_2025_uni1_q.tex` で `01/uem_mat_mei_2025_uni1_01_q.tex` を直接参照。
+- `uem_mat_mei_0master.tex` と `uem_mat_tok_0master.tex` は enumerate 第2階層の左余白が `3\zw` に調整済み。
 - 生成PDF（セット単位・ルート単位）も変更として同時管理。
 

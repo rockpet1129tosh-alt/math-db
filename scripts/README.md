@@ -31,7 +31,7 @@
 - `university_exam/tokyo-u/` を起点に整備
 - `2025/<set-id>/` を正本として管理（`sets/` 中間階層なし）
 - `_original` は試験セット直下
-- 命名規則は `uem_tok_YYYY_term_track_...`
+- 命名規則は `uem_mat_tok_YYYY_term_track_...`
 
 ## 追加・更新時のチェック
 

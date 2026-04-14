@@ -53,7 +53,7 @@ math-db/
 - 2025 は試験セット方式を採用
 - 正本階層: `2025/<set-id>/`（`sets/` 中間階層なし）
 - `_original` は試験セット直下
-- 命名規則: `uem_tok_YYYY_term_track_...`
+- 命名規則: `uem_mat_tok_YYYY_term_track_...`
 
 ## 6. ドキュメント分担
 
