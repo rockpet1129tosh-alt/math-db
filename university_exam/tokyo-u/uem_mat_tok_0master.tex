@@ -67,14 +67,14 @@
 \pagestyle{main}
 
 % 見出しの設定
-\ModifyHeading{section}{lines=2,label_format={\S},
+\ModifyHeading{section}{lines=2.2, label_format={\S},
     format={%
         \begin{tikzpicture}
         \useasboundingbox (0,0) rectangle (0,0);
         \fill[black!50] (0,-4pt) rectangle (8pt,14pt);
         \draw[black!50,line width=1pt] (0,-4pt) -- (\linewidth,-4pt);
         \end{tikzpicture}%
-    \hspace{1\zw}#1#2}}
+    \hspace{1\zw}#1#2\vspace{9pt}}}
 
 \ModifyHeading{subsection}{font=\sffamily\large,
     label_format={\framebox[21pt][c]%
@@ -144,7 +144,7 @@
 
 % 独自空白の設定
 \newcommand{\myspacea}{\hspace{3.4pt}}
-\newcommand{\myspaceb}{\hspace{1\zw}}
+\newcommand{\myspaceb}{\hspace{2\zw}}
 
 % 独自数式環境の設定
 \newenvironment{myaligna}[1][c]{

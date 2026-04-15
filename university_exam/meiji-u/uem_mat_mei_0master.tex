@@ -10,12 +10,6 @@
 
 \usepackage{amsmath,amssymb}
 
-\let\mathdiv\div
-
-\usepackage[italicdiff]{physics}
-
-\let\div\mathdiv
-
 \usepackage{ulem}
 
 \usepackage{needspace}
@@ -29,7 +23,8 @@
 \usepackage{caption}
 \captionsetup{font={small,sf},skip=2pt}
 \usepackage{graphicx}
-\newcommand{\insertmylogo}{\includegraphics[height=7mm]{../../figures/logo_miyoshi_1/logo_miyoshi_1.pdf}}
+\newcommand{\insertmylogo}%
+    {\includegraphics[height=7mm]{../../figures/logo_miyoshi_1/logo_miyoshi_1.pdf}}
 
 \usepackage{subfiles}
 
@@ -72,14 +67,14 @@
 \pagestyle{main}
 
 % 見出しの設定
-\ModifyHeading{section}{lines=2,label_format={\S},
+\ModifyHeading{section}{lines=2.2, label_format={\S},
     format={%
         \begin{tikzpicture}
         \useasboundingbox (0,0) rectangle (0,0);
         \fill[black!50] (0,-4pt) rectangle (8pt,14pt);
         \draw[black!50,line width=1pt] (0,-4pt) -- (\linewidth,-4pt);
         \end{tikzpicture}%
-    \hspace{1\zw}#1#2}}
+    \hspace{1\zw}#1#2\vspace{9pt}}}
 
 \ModifyHeading{subsection}{font=\sffamily\large,
     label_format={\framebox[21pt][c]%
@@ -90,8 +85,8 @@
 \setlength{\mathindent}{3\zw}
 
 \setlength{\jot}{0pt}
-\setlength{\lineskip}{7.5pt}
-\setlength{\lineskiplimit}{7.5pt}
+\setlength{\lineskip}{6.2pt}
+\setlength{\lineskiplimit}{20pt}
 
 \setlength{\fboxsep}{5pt}
 \setlength{\fboxrule}{1.0pt}
@@ -149,3 +144,20 @@
 
 % 独自ベクトルの設定
 \newcommand{\vecb}[1]{\overrightarrow{#1\vphantom{b}}}
+
+% 独自空白の設定
+\newcommand{\myspacea}{\hspace{3.4pt}}
+\newcommand{\myspaceb}{\hspace{2\zw}}
+
+% 独自数式環境の設定
+\newenvironment{myaligna}[1][c]{
+  \if#1t\vtop\else\vcenter\fi\bgroup
+    \offinterlineskip 
+    \def\\{\crcr\noalign{\vskip 6.2pt}} 
+    \halign\bgroup
+      \hfil$\displaystyle ##$&$\displaystyle {}##$\hfil \cr
+}{%
+      \crcr
+    \egroup
+  \egroup
+}
