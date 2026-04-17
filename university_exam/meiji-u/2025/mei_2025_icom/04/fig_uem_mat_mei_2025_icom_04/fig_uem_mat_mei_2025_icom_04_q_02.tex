@@ -1,0 +1,23 @@
+\documentclass[border=1pt]{standalone}
+\usepackage{luatexja-fontspec}
+    \setmainjfont[Scale=0.92]{HaranoAjiMincho}
+
+\usepackage{cellspace}
+    \setlength\cellspacetoplimit{3pt}
+    \setlength\cellspacebottomlimit{3pt}
+
+\begin{document}
+    \begin{tabular}{|Sc|Sc|Sc|Sc|}
+        \cline{2-4}
+        \multicolumn{1}{c|}{} & サイコロの出た目 & Xさん & Yさん \\
+        \hline
+        ポイント & 1，2，3 & 北 & 南 \\
+        \cline{2-4}
+        C，D，E以外 & 4，5，6 & 東 & 西 \\
+        \hline
+        ポイント & 1，2，3，4 & 北 & 南 \\
+        \cline{2-4}
+        C，D，E & 5，6 & 東 & 西 \\
+        \hline
+    \end{tabular}
+\end{document}

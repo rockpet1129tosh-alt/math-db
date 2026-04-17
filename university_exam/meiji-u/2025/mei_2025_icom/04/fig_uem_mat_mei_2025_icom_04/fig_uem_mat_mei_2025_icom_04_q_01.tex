@@ -1,0 +1,31 @@
+\documentclass[border=1pt]{standalone}
+\usepackage{tikz}
+\usepackage{luatexja}
+
+\renewcommand{\kanjifamilydefault}{\gtdefault}
+\renewcommand{\familydefault}{\sfdefault}
+
+\begin{document}
+    \begin{tikzpicture}[semithick]
+        % パラメータの定義
+        \pgfmathsetmacro{\d}{1}
+        
+        \foreach \i in {-2,-1,...,2} {
+            \draw (\i*\d,2*\d) -- (\i*\d,-2*\d);
+        }
+        \foreach \j in {-2,-1,...,2} {
+            \draw (-2*\d,\j*\d) -- (2*\d,\j*\d);
+        }     
+
+        \node[below left,inner sep=3pt] at (-2*\d,-2*\d) {A};
+        \node[above right,inner sep=3pt] at (-\d,-\d) {C};
+        \node[above right,inner sep=3pt] at (0,0) {D};
+        \node[above right,inner sep=3pt] at (\d,\d) {E};
+        \node[above right,inner sep=3pt] at (2*\d,2*\d) {B};
+
+        \node[above,outer sep=2pt,font=\small] at (0,2*\d) {北};
+        \node[below,outer sep=2pt,font=\small] at (0,-2*\d) {南};
+        \node[left,outer sep=2pt,font=\small] at (-2*\d,0) {西};
+        \node[right,outer sep=2pt,font=\small] at (2*\d,0) {東};
+    \end{tikzpicture}
+\end{document}

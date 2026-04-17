@@ -129,6 +129,10 @@
 \newcommand{\myboxe}[2][2pt]{%
     {\setlength{\fboxrule}{1pt}\setlength{\fboxsep}{#1}\boxed{\makebox[3.4\zw][c]{#2}}}%
 }
+\newcommand{\myboxes}[2][1.2pt]{%
+    {\setlength{\fboxrule}{1pt}\setlength{\fboxsep}{#1}%
+    \boxed{\makebox[2.4\zw][c]{\footnotesize{#2}}}}%
+}
 \newcommand{\myboxf}[2][2pt]{%
     {\setlength{\fboxrule}{.5pt}\setlength{\fboxsep}{#1}\boxed{\makebox[3.4\zw][c]{\textsf{#2}}}}%
 }
@@ -160,4 +164,12 @@
       \crcr
     \egroup
   \egroup
+}
+
+% 独自楕円番号の設定
+\newcommand{\myegga}[1]{\raisebox{-3pt}{%
+    \begin{tikzpicture}[x=1pt,y=1pt,line width=.7pt]
+        \draw (0,0) ellipse (3.9 and 5.4);
+        \draw (0,0) node[font=\scriptsize] {#1};
+    \end{tikzpicture}}%
 }
